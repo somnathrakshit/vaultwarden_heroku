@@ -4,7 +4,7 @@ set -euo pipefail
 SCRIPTPATH="$( cd "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 
 VAULTWARDEN_FOLDER="vaultwarden"
-CREATE_APP_NAME=${{ secrets.HEROKU_APP_NAME }}
+CREATE_APP_NAME=" "
 ENABLE_AUTOBUS_BACKUP=1
 ENABLE_DUO=0
 GIT_HASH="main"
@@ -12,7 +12,7 @@ USE_PSQL=1
 HEROKU_VERIFIED=1
 OFFSITE_HEROKU_DB=" "
 STRATEGY_TYPE="deploy"
-ADMIN_TOKEN=${{ secrets.ADMIN_TOKEN }}
+ADMIN_TOKEN=" "
 
 # Clean out any existing contents
 rm -rf ./${VAULTWARDEN_FOLDER}

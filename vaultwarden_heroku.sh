@@ -13,6 +13,7 @@ HEROKU_VERIFIED=1
 OFFSITE_HEROKU_DB=" "
 STRATEGY_TYPE="deploy"
 ADMIN_TOKEN=" "
+HEROKU_CREATE_OPTIONS=" "
 
 # Clean out any existing contents
 rm -rf ./${VAULTWARDEN_FOLDER}

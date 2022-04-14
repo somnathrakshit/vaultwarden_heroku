@@ -1,4 +1,4 @@
-name: VaultwardenOnHeroku_Deploy
+name: VaultwardenOnHeroku_Update
 
 on:
   workflow_dispatch:
@@ -16,8 +16,8 @@ env:
   ADMIN_TOKEN: ${{ secrets.ADMIN_TOKEN }}
 
 jobs:
-  create_and_deploy_app:
-    name: Create Vaultwarden app on Heroku, build, and deploy.
+  update_and_deploy:
+    name: Update Vaultwarden app (to latest version or SHA) on Heroku and deploy.
     runs-on: ubuntu-latest
     steps:
     - uses: docker-practice/actions-setup-docker@master

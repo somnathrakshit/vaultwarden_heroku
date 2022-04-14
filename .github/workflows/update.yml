@@ -8,6 +8,7 @@ env:
   CREATE_APP_NAME: ${{ secrets.HEROKU_APP_NAME }}
   DUO_ENABLE: 0
   GIT_HASH: main
+  STRATEGY_TYPE: update
   HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
   USE_PSQL: 1
   HEROKU_VERIFIED: 1
@@ -29,4 +30,4 @@ jobs:
         fetch-depth: 1
     - run: curl https://cli-assets.heroku.com/install.sh | sh
     - run: sudo apt update && sudo apt install jq openssl -y
-    - run: bash vaultwarden_heroku.sh -a $CREATE_APP_NAME -d $DUO_ENABLE -g $GIT_HASH -m $ADMIN_TOKEN -p $USE_PSQL -v $HEROKU_VERIFIED -u ${OFFSITE_HEROKU_DB:-' '} -b $AUTOBUS_ENABLE -t update
+    - run: bash vaultwarden_heroku.sh -a $CREATE_APP_NAME -d $DUO_ENABLE -g $GIT_HASH -m $ADMIN_TOKEN -p $USE_PSQL -v $HEROKU_VERIFIED -u ${OFFSITE_HEROKU_DB:-' '} -b $AUTOBUS_ENABLE -t $STRATEGY_TYPE

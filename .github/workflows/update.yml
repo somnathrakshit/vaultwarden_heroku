@@ -1,4 +1,4 @@
-name: VaultwardenOnHeroku_Update
+name: VaultwardenOnHeroku_Deploy
 
 on:
   workflow_dispatch:
@@ -8,7 +8,6 @@ env:
   CREATE_APP_NAME: ${{ secrets.HEROKU_APP_NAME }}
   DUO_ENABLE: 0
   GIT_HASH: main
-  STRATEGY_TYPE: update
   HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
   USE_PSQL: 1
   HEROKU_VERIFIED: 1
@@ -17,8 +16,8 @@ env:
   ADMIN_TOKEN: ${{ secrets.ADMIN_TOKEN }}
 
 jobs:
-  update_and_deploy:
-    name: Update Vaultwarden app (to latest version or SHA) on Heroku and deploy.
+  create_and_deploy_app:
+    name: Create Vaultwarden app on Heroku, build, and deploy.
     runs-on: ubuntu-latest
     steps:
     - uses: docker-practice/actions-setup-docker@master
@@ -30,4 +29,4 @@ jobs:
         fetch-depth: 1
     - run: curl https://cli-assets.heroku.com/install.sh | sh
     - run: sudo apt update && sudo apt install jq openssl -y
-    - run: bash vaultwarden_heroku.sh -a $CREATE_APP_NAME -d $DUO_ENABLE -g $GIT_HASH -m $ADMIN_TOKEN -p $USE_PSQL -v $HEROKU_VERIFIED -u ${OFFSITE_HEROKU_DB:-' '} -b $AUTOBUS_ENABLE -t $STRATEGY_TYPE
+    - run: bash vaultwarden_heroku.sh -a $CREATE_APP_NAME -d $DUO_ENABLE -g $GIT_HASH -m $ADMIN_TOKEN -p $USE_PSQL -v $HEROKU_VERIFIED -u ${OFFSITE_HEROKU_DB:-' '} -b $AUTOBUS_ENABLE -t update

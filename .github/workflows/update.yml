@@ -1,4 +1,4 @@
-name: VaultwardenOnHeroku_Deploy
+name: VaultwardenOnHeroku_Update
 
 on:
   workflow_dispatch:

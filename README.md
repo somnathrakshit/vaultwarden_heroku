@@ -1,12 +1,10 @@
-**THIS PROJECT WAS FORKED FROM [vaultwarden_heroku](https://github.com/davidjameshowell/vaultwarden_heroku)**
+**THIS PROJECT WAS FORKED FROM [vaultwarden_heroku](https://github.com/davidjameshowell/vaultwarden_heroku) to enable the use of admin token**
 
 # Vaultwarden on Heroku for Free!
 Deploy Vaultwarden On Heroku for free via Github
 
 ![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/somnathrakshit/vaultwarden_heroku/VaultwardenOnHeroku_Deploy/main?label=Deploy%20Vaultwarden&style=for-the-badge)
 ![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/somnathrakshit/vaultwarden_heroku/VaultwardenOnHeroku_Update/main?label=Update%20Vaultwarden&style=for-the-badge)
-
-[![CodeFactor](https://www.codefactor.io/repository/github/davidjameshowell/vaultwarden_heroku/badge)](https://www.codefactor.io/repository/github/davidjameshowell/vaultwarden_heroku)
 
 ## Features
 * Build and deploy cutomized Vaultwarden image from source to Heroku via Github actions

@@ -71,6 +71,9 @@ function heroku_bootstrap {
     echo "And set DB connections to seven in order not to saturate the free DB"
     heroku config:set DATABASE_MAX_CONNS=7 -a "${APP_NAME}"
     heroku config:set DOMAIN="https://${APP_NAME}.herokuapp.com" -a "${APP_NAME}"
+    
+    echo "https://github.com/dani-garcia/vaultwarden/blob/887e320e7f8dfc62d9b3ed08aca216cd7ad229f1/src/main.rs#L282"
+    heroku config:set I_REALLY_WANT_VOLATILE_STORAGE=true -a "${APP_NAME}"
 }
 
 function check_addons {

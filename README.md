@@ -3,8 +3,8 @@
 # Vaultwarden on Heroku for Free!
 Deploy Vaultwarden in Heroku for free via Github
 
-![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/davidjameshowell/vaultwarden_heroku/VaultwardenOnHeroku_Deploy/main?label=Deploy%20Vaultwarden&style=for-the-badge)
-![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/davidjameshowell/vaultwarden_heroku/VaultwardenOnHeroku_Update/main?label=Update%20Vaultwarden&style=for-the-badge)
+![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/somnathrakshit/vaultwarden_heroku/VaultwardenOnHeroku_Deploy/main?label=Deploy%20Vaultwarden&style=for-the-badge)
+![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/somnathrakshit/vaultwarden_heroku/VaultwardenOnHeroku_Update/main?label=Update%20Vaultwarden&style=for-the-badge)
 
 [![CodeFactor](https://www.codefactor.io/repository/github/davidjameshowell/vaultwarden_heroku/badge)](https://www.codefactor.io/repository/github/davidjameshowell/vaultwarden_heroku)
 
@@ -13,6 +13,7 @@ Deploy Vaultwarden in Heroku for free via Github
 * Add global Duo Security enablement for replica deployment as needed
 * Maintanable updates with Git Hash for future updates
 * Easily extendable for future tweaks
+* Use your own admin token
 
 ## Usage
 
@@ -23,7 +24,8 @@ Usage is simple, fast, and user friendly!
 1. Create a fork of this project
 2. Edit the `.github/workflows/deploy.yml` to enable/disable Duo and/or modify the checkout hash of Vaultwarden upstream.
 3. Go to your forked repo Settings > Secrets and add secrets for:
-  * HEROKU_API_KEY (yoru Heroku API key - can be found in **[Account Setings](https://dashboard.heroku.com/account)** -> APi Keys)
+  * ADMIN_TOKEN: Enter a random string (preferably >20 characters so that it cannot be guessed) [Value alphanumerical]
+  * HEROKU_API_KEY (Your Heroku API key - can be found in **[Account Setings](https://dashboard.heroku.com/account)** -> API Keys) [Value alphanumerical]
   * HEROKU_APP_NAME (the name of the Heroku application, this must be unqiue across Heroku and will fail if it is not) [Value alphanumerical]
   * **HEROKU_VERIFIED (required regardless, if you have added a credit card on, your account will be verified to use built in addons, if not please see "NON VERIFIED ACCOUNTS" section)** [Value 0/1]
 4. Go to the Actions tab, select the BitwardenRSOnHerokuAIO_Deploy job and wait!
@@ -33,10 +35,9 @@ Usage is simple, fast, and user friendly!
  ### Update
  
  Updating is simple and can be done one of two ways:
- * Running the workflow manually via Github Actions
- * Making a commit to the main branch, forcing a Github Actions workflow to initiate
+ * Go to the Actions tab, select the BitwardenRSOnHerokuAIO_Update job and wait!
  
-Either one of these will force the Github Actions workflow to run and update the app. If you need to modify to enable/disable settings, you should re run it as well.
+This will force the Github Actions workflow to run and update the app. If you need to modify to enable/disable settings, you should re run it as well.
 
 ## Non Verified Heroku Accounts
 Non-verified Heroku accounts cannot use the built in Heroku addons, regardless if they are free or not. This just requires you to do a few more steps and use an outside resources. I have not personally vetted this service, but [FreeMySQLHosting](https://www.freemysqlhosting.net/) has free plans comparable to the JawsDB addon and should be sufficient for usage. It is suggested that regardless of whatever route you take, you take regular constructed backups of your Bitwarden Vault for safety. 

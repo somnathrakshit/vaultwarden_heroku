@@ -1,7 +1,7 @@
-**THIS PROJECT WAS RENAMED FROM BITWARDEN_RS_HEROKU TO VAULTWARDEN_HEROKU TO MATCH UPSTREAM PROJECT NAME**
+**THIS PROJECT WAS FORKED FROM [vaultwarden_heroku](https://github.com/davidjameshowell/vaultwarden_heroku)**
 
 # Vaultwarden on Heroku for Free!
-Deploy Vaultwarden in Heroku for free via Github
+Deploy Vaultwarden On Heroku for free via Github
 
 ![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/somnathrakshit/vaultwarden_heroku/VaultwardenOnHeroku_Deploy/main?label=Deploy%20Vaultwarden&style=for-the-badge)
 ![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/somnathrakshit/vaultwarden_heroku/VaultwardenOnHeroku_Update/main?label=Update%20Vaultwarden&style=for-the-badge)
